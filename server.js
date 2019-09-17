@@ -108,16 +108,16 @@ router.get('/categories', (req, res) => {
 
 })
 
-router.get('/categories/:id', (req, res) => {
+// router.get('/categories/:id', (req, res) => {
 
-	Category.findOne({id:req.params.id})
-	.populate('products')
-	.then((category) => {
+// 	Category.findOne({id:req.params.id})
+// 	.populate('products')
+// 	.then((category) => {
 
-	    return res.json(category);
-	});
+// 	    return res.json(category);
+// 	});
 
-})
+// })
 
 router.get('/categories/:name', (req, res) => {
 
@@ -196,8 +196,8 @@ router.put('/users/:id', (req, res) => {
 });
 
 router.post('/authenticate', (req, res) => {
-	var {name,password} = req.body;
-	var credential = {name,password}
+	var {username,password} = req.body;
+	var credential = {username,password}
 	User.findOne(credential)
 	.then((user) => {
 	    return res.json(user);

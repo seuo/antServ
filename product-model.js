@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 var Review = require('./review-model');
-var Category = require('./category-model');
 
 const ProductSchema = new Schema(
   {
@@ -10,7 +9,8 @@ const ProductSchema = new Schema(
     description: String,
     photo:String,
     price:Number,
-    cat_id:Number,
+    cat_id: Number,
+    cat_name: String,
     user_id:Number,
     purchaser_id:Number,
 
