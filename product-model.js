@@ -8,12 +8,14 @@ const ProductSchema = new Schema(
     name: String,
     description: String,
     photo:String,
+    photos:[String],
     price:Number,
     cat_id: Number,
     cat_name: String,
-    user_id:Number,
+    seller_id:Number,
     purchaser_id:Number,
-
+    seller_id:Number,
+    deleted_at:Number,
   },
   { 
   	timestamps: true,
@@ -21,11 +23,11 @@ const ProductSchema = new Schema(
   }
 );
 
-ProductSchema.virtual('reviews', {
+ProductSchema.virtual('review', {
   ref: 'Review', // The model to use
   localField: 'id', 
   foreignField: 'prod_id', 
-  justOne: false,
+  justOne: true,
 });
 
 
