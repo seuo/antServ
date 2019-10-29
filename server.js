@@ -16,7 +16,7 @@ var Review = require('./review-model');
 
 // mongodb://ants:<password>@cluster0-shard-00-00-ucard.mongodb.net:27017,cluster0-shard-00-01-ucard.mongodb.net:27017,cluster0-shard-00-02-ucard.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
 
-var connectionString = 'mongodb://ants:admin@cluster0-shard-00-00-ucard.mongodb.net:27017,cluster0-shard-00-01-ucard.mongodb.net:27017,cluster0-shard-00-02-ucard.mongodb.net:27017/ANTS?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+var connectionString = 'mongodb+srv://ants:admin@cluster0-ucard.mongodb.net/ANTS?retryWrites=true&w=majority';
 
 // var connectionString = 'mongodb://ants:ants@cluster0-shard-00-00-5myjr.mongodb.net:27017,cluster0-shard-00-01-5myjr.mongodb.net:27017,cluster0-shard-00-02-5myjr.mongodb.net:27017/ants?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(connectionString,{ useNewUrlParser: true });
