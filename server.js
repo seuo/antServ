@@ -18,7 +18,6 @@ var Review = require('./review-model');
 
 var connectionString = 'mongodb+srv://ants:admin@cluster0-ucard.mongodb.net/ANTS?retryWrites=true&w=majority';
 
-// var connectionString = 'mongodb://ants:ants@cluster0-shard-00-00-5myjr.mongodb.net:27017,cluster0-shard-00-01-5myjr.mongodb.net:27017,cluster0-shard-00-02-5myjr.mongodb.net:27017/ants?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 mongoose.connect(connectionString,{ useNewUrlParser: true });
 var  db = mongoose.connection;
 db.once('open', () => console.log('Database connected'));
@@ -327,5 +326,5 @@ router.delete('/reviews/:id', (req, res) => {
 app.use('/api', router);
 
 // launch our backend into a port
-const apiPort = 8080;
+const apiPort = 80;
 app.listen(apiPort, () => console.log('Listening on port '+apiPort));
